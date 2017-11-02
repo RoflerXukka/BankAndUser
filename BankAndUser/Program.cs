@@ -170,15 +170,15 @@ class Example
 
                     for (int j = 0; j < bill.Count; j++)
                     {
-                        for (int i = 0; i < bill.Count; i++)
+                        for (int i = bill.Count - 2; i >= 0; i--)
                         {
-                            if (bill[j] > bill[i])
+                            if (bill[i] < bill[i + 1])
                             {
-                                int help = bill[i];
-                                bill[i] = bill[i];
+                                int help = bill[i + 1];
+                                bill[i + 1] = bill[i];
                                 bill[i] = help;
-                                bool help2 = status[i];
-                                status[i] = status[i];
+                                bool help2 = status[i + 1];
+                                status[i + 1] = status[i];
                                 status[i] = help2;
 
                             }
